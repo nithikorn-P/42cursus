@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndejsong <ndejsong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 12:57:34 by ndejsong          #+#    #+#             */
-/*   Updated: 2022/07/06 02:16:33 by ndejsong         ###   ########.fr       */
+/*   Created: 2022/07/18 03:37:21 by ndejsong          #+#    #+#             */
+/*   Updated: 2022/07/18 10:39:25 by ndejsong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*ps;
-	size_t			i;
+	char	*ps;
+	size_t	i;
 
-	ps = (unsigned char *) s;
+	ps = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!ps)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		if (ps[i] == (unsigned char) c)
-			return (ps + i);
+		ps[i] = f(i, s[i]);
 		i++;
 	}
-	return (NULL);
+	return (ps);
 }

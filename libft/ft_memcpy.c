@@ -14,13 +14,17 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int	*pdst;
-	unsigned int	*psrc;
+	char	*pdst;
+	char	*psrc;
+	size_t	i;
 
-	while (n)
+	pdst = (char *) dst;
+	psrc = (char *) src;
+	i = 0;
+	while (i < n)
 	{
-		pdst[n] = psrc[n];
-		n--;
+		pdst[i] = psrc[i];
+		i++;
 	}
-	return (dst);
+	return (pdst);
 }
