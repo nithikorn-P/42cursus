@@ -6,13 +6,13 @@
 /*   By: ndejsong <ndejsong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:40:34 by ndejsong          #+#    #+#             */
-/*   Updated: 2022/07/18 10:46:50 by ndejsong         ###   ########.fr       */
+/*   Updated: 2022/08/04 20:37:04 by ndejsong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
