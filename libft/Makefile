@@ -27,10 +27,11 @@ all: $(NAME)
 
 $(NAME):
 	@$(CC) $(CFLAGS) -c $(SRC_FILE)
-	ar -rcs $(NAME) $(OBJ_FILE)
+	@ar -rcs $(NAME) $(OBJ_FILE)
 
 clean:
 	@rm -rf $(OBJ_FILE)
+	@rm -rf $(BONUS_OBJ_FILE)
 	@echo "Removed all .o files"
 
 fclean: clean
@@ -39,8 +40,8 @@ fclean: clean
 
 bonus: all
 	@$(CC) $(CFLAGS) -c $(BONUS_SRC_FILE)
-	ar -rcs $(NAME) $(BONUS_OBJ_FILE)
+	@ar -rcs $(NAME) $(BONUS_OBJ_FILE)
 
 re: fclean all bonus
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
