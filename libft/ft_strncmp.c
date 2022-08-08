@@ -6,7 +6,7 @@
 /*   By: ndejsong <ndejsong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 12:53:33 by ndejsong          #+#    #+#             */
-/*   Updated: 2022/07/01 12:57:21 by ndejsong         ###   ########.fr       */
+/*   Updated: 2022/08/08 23:11:39 by ndejsong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (s1[i] && i < n - 1)
 	{
 		if ((unsigned char) s1[i] - (unsigned char) s2[i])
-			return (s1[i] - s2[i]);
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }
