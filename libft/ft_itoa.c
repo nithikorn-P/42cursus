@@ -6,7 +6,7 @@
 /*   By: ndejsong <ndejsong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 21:56:06 by ndejsong          #+#    #+#             */
-/*   Updated: 2022/07/18 01:01:19 by ndejsong         ###   ########.fr       */
+/*   Updated: 2022/08/13 01:11:23 by ndejsong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_itoa(int n)
 
 	digit = ft_digit(n);
 	str = (char *) ft_calloc(digit + 1 + (n < 0), sizeof(char));
+	if (!str)
+		return (NULL);
 	if (n < 0)
 	{
 		str[0] = '-';

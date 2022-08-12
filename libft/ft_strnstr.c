@@ -6,7 +6,7 @@
 /*   By: ndejsong <ndejsong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:14:58 by ndejsong          #+#    #+#             */
-/*   Updated: 2022/07/07 01:45:45 by ndejsong         ###   ########.fr       */
+/*   Updated: 2022/08/13 01:00:10 by ndejsong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*phaystack;
-	size_t	needle_len;
-	size_t	i;
+	size_t	n_len;
 
-	phaystack = (char *) haystack;
-	needle_len = ft_strlen(needle);
-	if (needle_len == 0 || haystack == needle)
-		return (phaystack);
-	i = 0;
-	while (i + needle_len <= len && phaystack[i])
+	n_len = ft_strlen(needle);
+	if (n_len == 0 || haystack == needle)
+		return ((char *) haystack);
+	while (*haystack && len - n_len)
 	{
-		if (ft_strncmp(phaystack + i, needle, needle_len) == 0)
-			return (phaystack + i);
-		i++;
+		if (!ft_strncmp(haystack, needle, n_len))
+			return ((char *) haystack);
+		haystack++;
+		len--;
 	}
 	return (NULL);
 }

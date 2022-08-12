@@ -6,7 +6,7 @@
 /*   By: ndejsong <ndejsong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 02:08:59 by ndejsong          #+#    #+#             */
-/*   Updated: 2022/07/07 14:39:01 by ndejsong         ###   ########.fr       */
+/*   Updated: 2022/08/13 01:07:07 by ndejsong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (n < len)
 		len = n;
 	substr = (char *) ft_calloc(len + 1, sizeof(char));
+	if (!substr)
+		return (NULL);
 	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
 }
