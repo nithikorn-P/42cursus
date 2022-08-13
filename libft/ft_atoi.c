@@ -6,7 +6,7 @@
 /*   By: ndejsong <ndejsong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:28:54 by ndejsong          #+#    #+#             */
-/*   Updated: 2022/08/13 01:59:11 by ndejsong         ###   ########.fr       */
+/*   Updated: 2022/08/13 18:19:25 by ndejsong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *str)
 
 	value = 0;
 	mul = 1;
-	while (ft_strchr(" \t\r\n\v\f", *str))
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	if (*str == '-')
 		mul = -1;
