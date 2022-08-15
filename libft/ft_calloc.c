@@ -6,7 +6,7 @@
 /*   By: ndejsong <ndejsong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 18:04:15 by ndejsong          #+#    #+#             */
-/*   Updated: 2022/08/15 19:33:17 by ndejsong         ###   ########.fr       */
+/*   Updated: 2022/08/15 19:56:24 by ndejsong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*p;
-	size_t	memsize;
+	void	*mall;
 
-	memsize = count * size;
-	if (memsize < count && memsize < size)
+	if (count * size < count && count * size < size)
 		return (0);
-	if (count == 0 || size == 0)
-		memsize = 1;
-	p = malloc(memsize);
-	if (!p)
+	mall = malloc(count * size);
+	if (mall == 0)
 		return (0);
-	ft_bzero(p, memsize);
-	return (p);
+	ft_bzero(mall, count * size);
+	return (mall);
 }
